@@ -50,7 +50,7 @@ export const Search: FC<SearchProps> = ({ onSearch, onAnswerUpdate, onDone }) =>
   const handleStream = async (sources: Source[]) => {
     try {
       const prompt = endent`Provide a 2-3 sentence answer to the query based on the following sources. Be original, concise, accurate, and helpful. Cite sources as [1] or [2] or [3] after each sentence (not just the very end) to back up your answer (Ex: Correct: [1], Correct: [2][3], Incorrect: [1, 2]).
-      
+
       ${sources.map((source, idx) => `Source [${idx + 1}]:\n${source.text}`).join("\n\n")}
       `;
 
@@ -71,7 +71,7 @@ export const Search: FC<SearchProps> = ({ onSearch, onAnswerUpdate, onDone }) =>
       onSearch({ query, sourceLinks: sources.map((source) => source.url) });
 
       const data = response.body;
-
+alert("Lokk at the response : "+ data);
       if (!data) {
         return;
       }
